@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy a Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light Gray Background */
+            color: #333; /* Dark Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+        }
+        h1 {
+            background-color: #004080; /* Blue Background */
+            color: #ffffff; /* White Text */
+            padding: 20px;
+            margin: -20px 0 20px 0; /* Move the heading up slightly */
+            border-radius: 8px 8px 0 0; /* Rounded Corners for Top */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Header Shadow */
+        }
+        form {
+            background-color: #ffffff; /* White Background for Form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Form Shadow */
+            width: 100%;
+            max-width: 600px; /* Max Width for Form */
+            margin: 20px 0; /* Spacing Around Form */
+        }
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px; /* Spacing Below Select */
+            background-color: #f9f9f9; /* Light Background for Select */
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #004080; /* Blue Button Color */
+            color: #ffffff; /* White Text */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3; /* Lighter Blue on Hover */
+            transform: scale(1.05); /* Slight Zoom Effect */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #004080; /* Blue Text */
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on Hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Buy a Service</h1>
+    <form action="/buy_service" method="post">
+        <label for="service_name">Select Service:</label>
+        <select id="service_name" name="service_name" required>
+            <option value="" disabled selected>Select a service</option>
+            <!-- Mobile Plans -->
+            <optgroup label="Mobile Plans">
+                <option value="Mobile Plan A - $50/month">Mobile Plan A - $50/month</option>
+                <option value="Mobile Plan B - $70/month">Mobile Plan B - $70/month</option>
+                <option value="Mobile Plan C - $90/month">Mobile Plan C - $90/month</option>
+                <option value="Mobile Plan D - $120/month">Mobile Plan D - $120/month</option>
+            </optgroup>
+
+            <!-- Internet Plans -->
+            <optgroup label="Internet Plans">
+                <option value="Internet Plan A - $40/month">Internet Plan A - $40/month</option>
+                <option value="Internet Plan B - $60/month">Internet Plan B - $60/month</option>
+                <option value="Internet Plan C - $80/month">Internet Plan C - $80/month</option>
+                <option value="Internet Plan D - $100/month">Internet Plan D - $100/month</option>
+            </optgroup>
+
+            <!-- Landline Packages -->
+            <optgroup label="Landline Packages">
+                <option value="Landline Package A - $30/month">Landline Package A - $30/month</option>
+                <option value="Landline Package B - $45/month">Landline Package B - $45/month</option>
+                <option value="Landline Package C - $60/month">Landline Package C - $60/month</option>
+            </optgroup>
+
+            <!-- Combo Packages -->
+            <optgroup label="Combo Packages (Mobile + Internet)">
+                <option value="Combo A - Mobile Plan A + Internet Plan A - $80/month">Combo A - Mobile Plan A + Internet Plan A - $80/month</option>
+                <option value="Combo B - Mobile Plan B + Internet Plan B - $120/month">Combo B - Mobile Plan B + Internet Plan B - $120/month</option>
+                <option value="Combo C - Mobile Plan C + Internet Plan C - $160/month">Combo C - Mobile Plan C + Internet Plan C - $160/month</option>
+            </optgroup>
+        </select>
+        <button type="submit">Buy Service</button>
+    </form>
+    <a href="/customer_dashboard">Back to Dashboard</a>
+</body>
+</html>

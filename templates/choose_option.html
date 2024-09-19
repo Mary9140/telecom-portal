@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose an Option</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f; /* Dark Blue Background */
+            color: #ffffff; /* White Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+            padding-top: 20px; /* Top padding to push content down */
+        }
+        h1 {
+            background-color: #003366; /* Darker Blue for Header */
+            padding: 20px;
+            margin: 0;
+            color: #ffffff; /* White Text */
+            font-size: 2.5em;
+            border-bottom: 2px solid #004080; /* Accent Line Below Header */
+            width: 100%; /* Full width for header */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0; /* Reduced margin to move options closer */
+            display: flex;
+            flex-direction: column; /* Vertical Layout */
+            align-items: center; /* Center align items horizontally */
+        }
+        li {
+            margin: 10px 0; /* Spacing between items */
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            background-color: #004080; /* Blue Button Color */
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #0056b3; /* Lighter Blue on Hover */
+            transform: scale(1.05); /* Slight Zoom Effect */
+        }
+        .logout {
+            display: inline-block;
+            margin-top: 20px; /* Reduced margin for logout button */
+            font-size: 1.2em;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 30px;
+            background-color: #800000; /* Dark Red for Logout Button */
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .logout:hover {
+            background-color: #b30000; /* Lighter Red on Hover */
+            transform: scale(1.05); /* Slight Zoom Effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose an Option</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/customer_dashboard">Customer Details</a></li>
+        <li><a href="/raise_ticket">Raise a Ticket</a></li>
+        <li><a href="/buy_service">Buy a Plan</a></li>
+    </ul>
+    <a href="/logout" class="logout">Logout</a>
+</body>
+</html>

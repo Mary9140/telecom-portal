@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light Gray Background */
+            color: #333; /* Dark Text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            background-color: #004080; /* Blue Background */
+            color: #ffffff; /* White Text */
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            border-bottom: 2px solid #003366; /* Darker Blue Bottom Border */
+        }
+        .section {
+            background-color: #ffffff; /* White Background */
+            border-radius: 8px; /* Rounded Corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+            margin: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 900px; /* Max Width for Content */
+        }
+        h2 {
+            border-bottom: 2px solid #004080; /* Blue Underline */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #004080; /* Blue Text */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd; /* Light Gray Border */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4; /* Light Gray Background for Header */
+            color: #333; /* Dark Text */
+        }
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #004080; /* Blue Text */
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 1px solid #004080; /* Blue Border */
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #004080; /* Blue Background on Hover */
+            color: #ffffff; /* White Text on Hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Customer Dashboard</h1>
+
+    <!-- Account Details Section -->
+    <div class="section">
+        <h2>Account Details</h2>
+        <p><strong>Name:</strong> {{ customer.name }}</p>
+        <p><strong>Email:</strong> {{ customer.email }}</p>
+        <p><strong>Phone No.:</strong> {{ customer.phone_no }}</p>
+        <p><strong>Address:</strong> {{ customer.address }}</p>
+    </div>
+
+    <!-- Services Purchased Section -->
+    <div class="section">
+        <h2>Services Purchased</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Purchase Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for purchase in purchases %}
+                <tr>
+                    <td>{{ purchase.service_name }}</td>
+                    <td>{{ purchase.purchase_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Raised Tickets Section -->
+    <div class="section">
+        <h2>Raised Tickets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket Description</th>
+                    <th>Plan Type</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Date Raised</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in tickets %}
+                <tr>
+                    <td>{{ ticket.description }}</td>
+                    <td>{{ ticket.plan_type }}</td>
+                    <td>{{ ticket.priority }}</td>
+                    <td>{{ ticket.status }}</td>
+                    <td>{{ ticket.date_raised }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <a href="/buy_service">Buy a New Service</a>
+    </div>
+
+    <div class="section">
+        <a href="/logout">Logout</a>
+    </div>
+
+</body>
+</html>
